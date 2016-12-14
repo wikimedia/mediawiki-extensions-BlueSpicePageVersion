@@ -1,0 +1,8 @@
+{
+  "autoload" : {
+    "psr-4": {
+      "BS\\PageVersion\\Tests\\" : "tests/phpunit",
+      "BS\\PageVersion\\" : "src"
+    }
+  }
+}
