@@ -1,8 +1,8 @@
 {
-  "@metadata": {
-    "authors": [
-      "Robert Vogel <vogel@hallowelt.com>"
-    ]
-  },
-  "bs-pageversion-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of extended search extension."
+	"@metadata": {
+		"authors": [
+			"Robert Vogel <vogel@hallowelt.com>"
+		]
+	},
+	"bs-pageversion-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of extended search extension."
 }
