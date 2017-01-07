@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel <vogel@hallowelt.com>"
+			"Robert Vogel <vogel@hallowelt.com>",
+			"Umherirrender"
 		]
 	},
-	"bs-pageversion-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of extended search extension."
+	"bs-pageversion-desc": "{{desc|name=BlueSpicePageVersion|url=https://www.mediawiki.org/wiki/Extension:BlueSpicePageVersion}}"
 }
