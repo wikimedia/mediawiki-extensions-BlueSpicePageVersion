@@ -1,7 +1,7 @@
 {
 	"name": "BlueSpicePageVersion",
 	"version": "2.27.1-alpha",
-	"license-name": "GPL-2.0+",
+	"license-name": "GPL-2.0-or-later",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
