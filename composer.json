@@ -2,7 +2,7 @@
 	"name": "mediawiki/blue-spice-page-version",
 	"type": "mediawiki-extension",
 	"description": "Provides variables and other functions about page revisions",
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-only",
 	"require": {
 		"composer/installers": "~1.0"
 	},
