@@ -3,9 +3,9 @@
 	"version": "2.27.1-alpha",
 	"license-name": "GPL-2.0-or-later",
 	"author": [
-		"[http://www.hallowelt.com Hallo Welt! GmbH]"
+		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
-	"url": "http://bluespice.com",
+	"url": "https://bluespice.com",
 	"descriptionmsg": "bs-pageversion-desc",
 	"type": "variable",
 	"ExtensionFunctions": [
