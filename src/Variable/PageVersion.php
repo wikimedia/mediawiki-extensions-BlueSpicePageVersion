@@ -2,7 +2,6 @@
 
 namespace BS\PageVersion\Variable;
 
-use BS\PageVersion\RevisionCounter;
 use BS\PageVersion\VersionFormatter;
 
 class PageVersion extends Base {

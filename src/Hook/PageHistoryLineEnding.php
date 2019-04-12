@@ -2,7 +2,6 @@
 
 namespace BS\PageVersion\Hook;
 
-
 use BS\PageVersion\VersionFormatter;
 
 class PageHistoryLineEnding {
@@ -16,13 +15,13 @@ class PageHistoryLineEnding {
 	/**
 	 *
 	 * @param \HistoryPager $history
-	 * @param \Wikimedia\Rdbms\ResultWrapper $row
-	 * @param string $s
-	 * @param array $classes
-	 * @return boolean
+	 * @param \Wikimedia\Rdbms\ResultWrapper &$row
+	 * @param string &$s
+	 * @param array &$classes
+	 * @return bool
 	 */
 	public function handle( $history, &$row, &$s, &$classes ) {
-		if( $this->versionFormatter === null ) {
+		if ( $this->versionFormatter === null ) {
 			$this->versionFormatter = new VersionFormatter(
 				\Title::newFromID( (int)$row->rev_page )
 			);

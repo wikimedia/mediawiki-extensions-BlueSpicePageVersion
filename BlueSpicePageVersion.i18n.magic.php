@@ -1,10 +1,10 @@
 <?php
 
-$magicWords = array();
+$magicWords = [];
 
 /** English (English) */
-$magicWords['en'] = array(
-	'pageversion' => array( 0, 'PAGEVERSION' ),
-	'pagerevisions' => array( 0, 'PAGEREVISIONS' ),
-	'pagemajorrevisions' => array( 0, 'PAGEMAJORREVISIONS' ),
-);
+$magicWords['en'] = [
+	'pageversion' => [ 0, 'PAGEVERSION' ],
+	'pagerevisions' => [ 0, 'PAGEREVISIONS' ],
+	'pagemajorrevisions' => [ 0, 'PAGEMAJORREVISIONS' ],
+];

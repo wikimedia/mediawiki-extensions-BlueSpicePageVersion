@@ -16,8 +16,8 @@ abstract class Base {
 
 	/**
 	 * Base constructor.
-	 * @param \Parser $parser
-	 * @param \ParserCache $cache
+	 * @param \Parser &$parser
+	 * @param \ParserCache &$cache
 	 */
 	function __construct( &$parser, &$cache ) {
 		$this->parser = $parser;

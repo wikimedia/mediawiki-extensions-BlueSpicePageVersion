@@ -2,7 +2,6 @@
 
 namespace BS\PageVersion;
 
-
 class VersionFormatter {
 
 	/**
@@ -14,20 +13,19 @@ class VersionFormatter {
 	/**
 	 * @var RevisionCounter
 	 */
-	protected  $revisionCounter = null;
+	protected $revisionCounter = null;
 
 	/**
 	 * VersionFormatter constructor.
 	 * @param \Title $title
-	 * @param RevisionCounter $revisionCounter
+	 * @param RevisionCounter|null $revisionCounter
 	 */
 	function __construct( $title, $revisionCounter = null ) {
 		$this->title = $title;
 
-		if( $revisionCounter instanceof RevisionCounter ) {
+		if ( $revisionCounter instanceof RevisionCounter ) {
 			$this->revisionCounter = $revisionCounter;
-		}
-		else {
+		} else {
 			$this->revisionCounter = RevisionCounter::instance( $this->title );
 		}
 	}
@@ -45,7 +43,7 @@ class VersionFormatter {
 
 	/**
 	 * @param int $revId
-	 * @param $format
+	 * @param string $format
 	 * @return string
 	 */
 	public function format( $revId, $format = '%s.%s' ) {

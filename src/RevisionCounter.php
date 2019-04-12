@@ -8,7 +8,6 @@
 
 namespace BS\PageVersion;
 
-
 class RevisionCounter {
 
 	const TYPE_MAJOR = 0;
@@ -47,13 +46,14 @@ class RevisionCounter {
 	/**
 	 * @var RevisionCounter[]
 	 */
-	protected  static $instances = [];
+	protected static $instances = [];
 
 	/**
 	 * @param \Title $title
+	 * @return self
 	 */
 	public static function instance( $title ) {
-		if( !isset( self::$instances[$title->getArticleID()] ) ) {
+		if ( !isset( self::$instances[$title->getArticleID()] ) ) {
 			self::$instances[$title->getArticleID()] = new self( $title );
 		}
 
@@ -82,12 +82,12 @@ class RevisionCounter {
 	public function getMajorRevisionCountFrom( $revId ) {
 		$revIdFound = false;
 		$count = 0;
-		foreach( $this->revisionList as $curRevId => $type ) {
-			if( $curRevId === $revId ) {
+		foreach ( $this->revisionList as $curRevId => $type ) {
+			if ( $curRevId === $revId ) {
 				$revIdFound = true;
 			}
 
-			if( $revIdFound === true && $type === self::TYPE_MAJOR ) {
+			if ( $revIdFound === true && $type === self::TYPE_MAJOR ) {
 				$count++;
 			}
 		}
@@ -103,16 +103,16 @@ class RevisionCounter {
 	public function getMinorRevisionCountFrom( $revId ) {
 		$revIdFound = false;
 		$count = 0;
-		foreach( $this->revisionList as $curRevId => $type ) {
-			if( $curRevId === $revId ) {
+		foreach ( $this->revisionList as $curRevId => $type ) {
+			if ( $curRevId === $revId ) {
 				$revIdFound = true;
 			}
 
-			if( $revIdFound && $type === self::TYPE_MINOR ) {
+			if ( $revIdFound && $type === self::TYPE_MINOR ) {
 				$count++;
 			}
 
-			if( $revIdFound && $type === self::TYPE_MAJOR ) {
+			if ( $revIdFound && $type === self::TYPE_MAJOR ) {
 				break;
 			}
 		}
@@ -121,17 +121,17 @@ class RevisionCounter {
 	}
 
 	/**
-	 * @param $majorRevisionId
+	 * @param int $majorRevisionId
 	 * @throws \UnexpectedValueException
 	 * @return int
 	 */
 	public function getMinorRevisionCountSince( $majorRevisionId ) {
-		if( !isset( $this->revisionIdTree[$majorRevisionId] ) ) {
-			//This is a workaround for when a new major page revision is being saved
-			//In that case we need to reload the data
+		if ( !isset( $this->revisionIdTree[$majorRevisionId] ) ) {
+			// This is a workaround for when a new major page revision is being saved
+			// In that case we need to reload the data
 			$this->load();
-			if( !isset( $this->revisionIdTree[$majorRevisionId] ) ) {
-				throw new \UnexpectedValueException('Not a major revision id: ' . $majorRevisionId);
+			if ( !isset( $this->revisionIdTree[$majorRevisionId] ) ) {
+				throw new \UnexpectedValueException( 'Not a major revision id: ' . $majorRevisionId );
 			}
 		}
 
@@ -142,7 +142,7 @@ class RevisionCounter {
 	protected function load() {
 		$this->revisionIdTree = [];
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'revision',
 			[ 'rev_id', 'rev_minor_edit' ],
@@ -150,14 +150,13 @@ class RevisionCounter {
 		);
 		$this->totalRevisionCount = $res->numRows();
 
-		foreach( $res as $row ) {
-			$revId = (int) $row->rev_id;
-			$revMinorEdit = (int) $row->rev_minor_edit;
-			if( $revMinorEdit === 0 ) {
+		foreach ( $res as $row ) {
+			$revId = (int)$row->rev_id;
+			$revMinorEdit = (int)$row->rev_minor_edit;
+			if ( $revMinorEdit === 0 ) {
 				$this->revisionIdTree[$revId] = [];
 				$this->lastMajorRevId = $revId;
-			}
-			else {
+			} else {
 				$this->revisionIdTree[$this->lastMajorRevId][] = $revId;
 			}
 

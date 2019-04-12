@@ -11,10 +11,10 @@ class ParserGetVariableValueSwitch {
 
 	/**
 	 * Returns the output for a parser variable
-	 * @param \Parser $parser
-	 * @param array $cache
-	 * @param string $magicWordId
-	 * @param string $ret
+	 * @param \Parser &$parser
+	 * @param array &$cache
+	 * @param string &$magicWordId
+	 * @param string &$ret
 	 * @return bool
 	 */
 	public function handle( \Parser &$parser, &$cache, &$magicWordId, &$ret ) {
@@ -29,7 +29,7 @@ class ParserGetVariableValueSwitch {
 			$variable = new PageMajorRevisions( $parser, $cache );
 		}
 
-		if( $variable instanceof Base ) {
+		if ( $variable instanceof Base ) {
 			$ret = $variable->getValue();
 		}
 

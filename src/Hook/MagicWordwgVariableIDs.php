@@ -6,7 +6,7 @@ class MagicWordwgVariableIDs {
 
 	/**
 	 * Adds magic word ids to Parser
-	 * @param array $customVariableIds
+	 * @param array &$customVariableIds
 	 * @return bool
 	 */
 	public function handle( &$customVariableIds ) {
