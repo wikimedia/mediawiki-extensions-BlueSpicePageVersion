@@ -139,6 +139,7 @@ class RevisionCounter {
 	}
 
 	protected $lastMajorRevId = 0;
+
 	protected function load() {
 		$this->revisionIdTree = [];
 
