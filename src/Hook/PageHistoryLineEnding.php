@@ -15,7 +15,7 @@ class PageHistoryLineEnding {
 	/**
 	 *
 	 * @param \HistoryPager $history
-	 * @param \Wikimedia\Rdbms\ResultWrapper &$row
+	 * @param \stdClass &$row
 	 * @param string &$s
 	 * @param array &$classes
 	 * @return bool
