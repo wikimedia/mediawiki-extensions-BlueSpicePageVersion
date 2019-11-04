@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
-	"bs-pageversion-desc": "Fournit des variables et autres fonctions concernant les révisions des pages"
+	"bs-pageversion-desc": "Fournit des variables et autres fonctions concernant les versions de pages"
 }
