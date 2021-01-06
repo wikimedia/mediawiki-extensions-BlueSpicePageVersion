@@ -19,13 +19,13 @@ class ParserGetVariableValueSwitch {
 	 */
 	public function handle( \Parser $parser, &$cache, $magicWordId, &$ret ) {
 		$variable = null;
-		if ( 'pageversion' === $magicWordId ) {
+		if ( $magicWordId === 'pageversion' ) {
 			$variable = new PageVersion( $parser, $cache );
 		}
-		if ( 'pagerevisions' === $magicWordId ) {
+		if ( $magicWordId === 'pagerevisions' ) {
 			$variable = new PageRevisions( $parser, $cache );
 		}
-		if ( 'pagemajorrevisions' === $magicWordId ) {
+		if ( $magicWordId === 'pagemajorrevisions' ) {
 			$variable = new PageMajorRevisions( $parser, $cache );
 		}
 
