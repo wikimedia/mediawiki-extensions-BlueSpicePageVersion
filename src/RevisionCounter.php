@@ -10,8 +10,8 @@ namespace BS\PageVersion;
 
 class RevisionCounter {
 
-	const TYPE_MAJOR = 0;
-	const TYPE_MINOR = 1;
+	private const TYPE_MAJOR = 0;
+	private const TYPE_MINOR = 1;
 
 	/**
 	 * @var \Title
