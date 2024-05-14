@@ -138,6 +138,7 @@ class RevisionCounter {
 		return count( $this->revisionIdTree[$majorRevisionId] );
 	}
 
+	/** @var int */
 	protected $lastMajorRevId = 0;
 
 	protected function load() {
