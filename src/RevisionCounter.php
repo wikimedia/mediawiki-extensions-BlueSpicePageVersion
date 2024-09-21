@@ -8,6 +8,8 @@
 
 namespace BS\PageVersion;
 
+use MediaWiki\MediaWikiServices;
+
 class RevisionCounter {
 
 	private const TYPE_MAJOR = 0;
@@ -144,7 +146,7 @@ class RevisionCounter {
 	protected function load() {
 		$this->revisionIdTree = [];
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'revision',
 			[ 'rev_id', 'rev_minor_edit' ],
