@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
-	"bs-pageversion-desc": "Proporciona variables e outras funcións sobre revisións de páxinas"
+	"bs-pageversion-desc": "Ofrece variables e outras funcións sobre as revisións das páxinas"
 }
